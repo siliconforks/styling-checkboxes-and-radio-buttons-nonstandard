@@ -8,32 +8,29 @@ input[type=checkbox]::-ms-check {
 }
 
 input[type=checkbox] {
+  width  : 16px;
+  height : 16px;
+  margin : 0;
+  background-image: url("checkbox-sprite.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+
+/* The following is used to adjust the position of 
+   the check boxes on the text baseline */
+
+  vertical-align: bottom;
   position: relative;
-  width: 1em;
-  height: 1em;
-  border: 1px solid gray;
-  /* Adjusts the position of the checkboxes on the text baseline */ 
-  vertical-align: -2px;
-  /* Set here so that Windows' High-Contrast Mode can override */
-  color: green;
+  bottom: 2px;
 }
 
-input[type=checkbox]::before {
-  content: "✔";
-  position: absolute;
-  font-size: 1.2em;
-  right: 0;
-  top: -0.3em;
-  visibility: hidden;
-}
-
-input[type=checkbox]:checked::before {
-  /* Use `visibility` instead of `display` to avoid recalculating layout */
-  visibility: visible;
+input[type=checkbox]:checked {
+  background-position: 0 -16px;
 }
 
 input[type=checkbox]:disabled {
-  border-color: black;
-  background: #ddd;
-  color: gray;
+  background-position: 0 -32px;
+}
+
+input[type=checkbox]:checked:disabled {
+  background-position: 0 -48px;
 }
