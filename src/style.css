@@ -1,12 +1,15 @@
+input[type=radio],
 input[type=checkbox] {
   -webkit-appearance: none;
   -moz-appearance: none;
 }
 
+input[type=radio]::-ms-check,
 input[type=checkbox]::-ms-check {
   display: none;
 }
 
+input[type=radio],
 input[type=checkbox] {
   width  : 16px;
   height : 16px;
@@ -23,14 +26,21 @@ input[type=checkbox] {
   bottom: 2px;
 }
 
+input[type=radio] {
+  background-image: url("radio-sprite.png");
+}
+
+input[type=radio]:checked,
 input[type=checkbox]:checked {
   background-position: 0 -16px;
 }
 
+input[type=radio]:disabled,
 input[type=checkbox]:disabled {
   background-position: 0 -32px;
 }
 
+input[type=radio]:checked:disabled,
 input[type=checkbox]:checked:disabled {
   background-position: 0 -48px;
 }
